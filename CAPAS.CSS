@@ -1,0 +1,717 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    counter-reset: score;
+
+}
+.phone {
+    position: relative;
+    border: 8px solid black;
+    border-radius: 30px;
+    height: 600px;
+    width: 300px;
+    background: #97cfef;
+    box-shadow: 0 25px 14px 4px rgb(80, 35, 35);
+}
+input[type=checkbox] {
+    appearance: none;
+    outline: none;
+}
+input:checked {
+    counter-increment: score;
+}
+.score__after {
+    content: counter(score);
+}
+/*------------------------------------CONEJO UNO---------------------------------*/
+.layer-1 {
+    position:relative;
+    z-index: 1;
+    height: 100px;
+    width: 80px;
+    bottom: 0;
+    left: 150px;
+    margin-top: 140px;
+    
+
+    animation-name: layer;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer {
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom: -80px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+.layer1 input[type=checkbox]{
+    appearance: none;
+    cursor: pointer;
+    height: 50px;
+    margin: 0;
+    position: relative;
+    top: 0;
+    width: 80px;
+}
+.left-ear-outer {
+    background: rgb(117, 113, 113);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 9px;
+    top: -7px;
+    border:1px solid black ;
+}
+.left-ear-inner {
+    background: rgb(241, 130, 115);
+    border-radius: 100%;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    left: 15px;
+    top: 16px;
+}
+.right-ear-outer {
+    background: rgb(117, 113, 113);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    top: -7px;
+    margin-bottom: 50px;
+    position: absolute;
+    right: 10px;
+    border:1px solid black ;
+}
+.right-ear-inner {
+    background: rgb(241, 130, 115);
+    border-radius: 100%;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+}
+.head{
+    position:absolute;
+    background-color: white;
+    width: 100;
+    height: 60px;
+    right: 0;
+    left: 0;
+    top: 30px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.head-eye {
+    background: black;
+    width: 4px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    animation-name: blink;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink {
+    0% {
+        height: 5px;
+    }
+    5% {
+        transform: translate(0px, 2px);
+        height: 1px;
+    }
+    10% {
+        transform: translate(0px, 0px);
+        height: 5px;
+    }
+}
+.head-eye-left {
+    left: 15px;
+}
+.head-eye-right {
+    right: 30px;
+}
+.noise1{
+    height: 10px;
+    left: 25px;
+    position: absolute;
+    top: 23px;
+    border:1px solid rgb(241, 130, 115);
+    border-right-color:transparent;
+    border-left-color:transparent;
+    border-bottom-color: transparent;
+    border-width:6px 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+/*------------------------------CONEJO 2------------------------------------*/
+.layer-2 {
+    position:absolute;
+    z-index: 2;
+    height: 360px;
+    width: 80px;
+    bottom: 10px;
+    left: 50px;
+    margin-bottom: 100px;
+
+    animation-name: layer1;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer1 {
+    0%{/*movimiento de los conejos */
+        bottom: 0;
+    }
+    25%{
+        bottom: -40px;
+    }
+    50%{
+        bottom: -80px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+.left-ear-outer2 {
+    background: rgb(117, 113, 113);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+    top: -7px;
+}
+.left-ear-inner2 {
+    background: rgb(241, 130, 115);
+    border-radius: 100%;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    left: 15px;
+    top: 16px;
+    border:1px solid black ;
+}
+.right-ear-outer2 {
+    background: rgb(117, 113, 113);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    top: -7px;
+    position: absolute;
+    right: 12px;
+}
+.right-ear-inner2 {
+    background: rgb(241, 130, 115);
+    border-radius: 100%;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    border:1px solid black ;
+}
+.head2{
+    position:absolute;
+    background-color: white;
+    height: 60px;
+    right: 0;
+    left: 0;
+    top: 30px;
+    margin: 0 auto;
+    border-radius: 80%;
+}
+.head-eye {
+    background: black;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+}
+.head-eye-left2 {
+    left: 30px;
+}
+.head-eye-right2 {
+    right: 15px;
+}
+.noise2{
+    height: 10px;
+    left: 48px;
+    position: absolute;
+    top: 23px;
+    border:1px solid rgb(241, 130, 115);
+    border-right-color:transparent;
+    border-left-color:transparent;
+    border-bottom-color: transparent;
+    border-width:6px 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+/*--------------------------------------------------------------------*/
+.layer-3 {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 400px;
+    background:rgb(148, 69, 32);
+    bottom: 0;
+    border-radius: 30px;
+    box-shadow: 2px -1px 10px 0px rgb(41 11 11);
+}
+.container{
+    width: 100%;
+    height: 20px;
+    background: #38771f;
+    position: absolute;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+.block{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    background: rgb(128, 77, 10);
+}
+.in{
+    border-top:1px solid #38771f;
+    border-bottom: 1px solid rgb(148, 69, 32);
+    width: 100%;
+    background: linear-gradient(135deg, #38771f 25%, transparent 25%) 0px/*movimiento a la derecha*/ 0px /*movimiento arriba y abajo*/,
+linear-gradient(-135deg, #38771f 25%, transparent 25%) -0px 0,
+linear-gradient(-45deg,rgb(148, 69, 32) 26%, transparent 25%)  -13px 0px,
+linear-gradient(45deg, rgb(148, 69, 32) 26%, transparent 25%) 61px 0px;
+background-size: 102% 100%;
+}
+/*-----------------------------CONEJO 3---------------------------*/
+.layer-4 {
+    position: absolute;
+    z-index: 4;
+    height: 260px;
+    width: 80px;
+    bottom: 0;
+    left: 20px;
+    margin-bottom: 100px;
+
+    animation-name: layer3;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer3 {
+    0%{
+        bottom: 0;
+    }
+    20%{
+        bottom: -80px;
+    }
+    40%{
+        bottom: -40px;
+    }
+    60%{
+        bottom: -20px;
+    }
+    80%{
+        bottom: -80px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+.left-ear-outer3 {
+    background: rgb(117, 113, 113);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+}
+.left-ear-inner3 {
+    background: rgb(241, 130, 115);
+    border-radius: 100%;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    left: 15px;
+    top: 16px;
+}
+.right-ear-outer3 {
+    background: rgb(117, 113, 113);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+}
+.right-ear-inner3 {
+    background: rgb(241, 130, 115);
+    border-radius: 100%;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+}
+.head3{
+    position:absolute;
+    background-color: white;
+    width: 100;
+    height: 60px;
+    right: 0;
+    left: 0;
+    top: 30px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.head-eye3 {
+    background: black;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+}
+.head-eye-left3 {
+    left: 30px;
+}
+.head-eye-right3 {
+    right: 30px;
+}
+.noise3{
+    height: 10px;
+    left: 37px;
+    position: absolute;
+    top: 18px;
+    border:1px solid rgb(241, 130, 115);
+    border-right-color:transparent;
+    border-left-color:transparent;
+    border-bottom-color: transparent;
+    border-width:6px 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+/*----------------------SEGUNDO MONTE-------------------*/
+.layer-5 {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 40;
+    margin: 0 auto;
+    width: 190px;
+    height: 300px;
+    background:rgb(148, 69, 32);
+    bottom: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: #97cfef;
+    box-shadow: 2px -1px 10px 0px rgb(41 11 11);
+    border-bottom-left-radius: 22px;
+}
+.container2{
+    width: 100%;
+    height: 20px;
+    background: #38771f;
+    position: absolute;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+.block2{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    background: rgb(128, 77, 10);
+}
+.in2{
+    border-top:1px solid #38771f;
+    border-bottom: 1px solid rgb(148, 69, 32);
+    width: 100%;
+    background: linear-gradient(135deg, #38771f 25%, transparent 25%) 0px/*movimiento a la derecha*/ 0px /*movimiento arriba y abajo*/,
+    linear-gradient(-135deg, #38771f 25%, transparent 25%) 0px 0,
+    linear-gradient(-45deg,rgb(148, 69, 32) 26%, transparent 25%)  -33px 0px,
+    linear-gradient(45deg, rgb(148, 69, 32) 25%, transparent 25%) -33px 0px;
+    background-size: 102% 100%;
+    }
+/*-------------------------CONEJO 4----------------------*/
+.layer-6 {
+    position: absolute;
+    z-index: 6;
+    height: 160px;
+    width: 80px;
+    bottom: 0;
+    right: 33px;
+    margin-bottom: 100px;
+    animation-name: layer4;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes layer4 {
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: -60px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+.left-ear-outer4 {
+    background: rgb(117, 113, 113);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+}
+.left-ear-inner4 {
+    background: rgb(241, 130, 115);
+    border-radius: 100%;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    left: 15px;
+    top: 16px;
+}
+.right-ear-outer4 {
+    background: rgb(117, 113, 113);
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+}
+.right-ear-inner4 {
+    background: rgb(241, 130, 115);
+    border-radius: 100%;
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 16px;
+}
+.head4{
+    position:absolute;
+    background-color: white;
+    width: 100;
+    height: 60px;
+    right: 0;
+    left: 0;
+    top: 30px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.head-eye4 {
+    background: black;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+}
+.head-eye-left4 {
+    left: 25px;
+    top: 4px;
+}
+.head-eye-right4 {
+    right: 25px;
+    top: 4px;
+}
+.noise4{
+    height: 10px;
+    left: 38px;
+    position: absolute;
+    top: 10px;
+    border:1px solid rgb(241, 130, 115);
+    border-right-color:transparent;
+    border-left-color:transparent;
+    border-bottom-color: transparent;
+    border-width:6px 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+/*------------------------------TERCER MONTE------------------------------*/
+.layer-7 {
+    position: absolute;
+    z-index: 7;
+    right: 3px;
+    margin: 0 auto;
+    width: 150px;
+    height: 200px;
+    background:rgb(148, 69, 32);
+    bottom: 0.1%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: #97cfef;
+    box-shadow: 2px -1px 10px 0px rgb(41 11 11);
+    border-bottom-right-radius: 15px;
+}
+.container3{
+    width: 100%;
+    height: 20px;
+    background: #38771f;
+    position: absolute;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+.block3{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    background: rgb(128, 77, 10);
+}
+.in3{
+    border-top:1px solid #38771f;
+    border-bottom: 1px solid rgb(148, 69, 32);
+    width: 100%;
+    background: linear-gradient(135deg, #38771f 25%, transparent 25%) 0px/*movimiento a la derecha*/ 0px /*movimiento arriba y abajo*/,
+    linear-gradient(-135deg, #38771f 25%, transparent 25%) -0px 0,
+    linear-gradient(-45deg,rgb(148, 69, 32) 26%, transparent 25%)  -26px 0px,
+    linear-gradient(45deg, rgb(148, 69, 32) 28%, transparent 25%) 25px 1px;
+    background-size: 102% 100%;
+    }
+    /*----------------------arbusto mitad----------------------*/
+.layer-8 {
+    position: absolute;
+    z-index: 8;
+    margin: 0 auto;
+    width: 200px;
+    height: 125px;
+    left: 0;
+    right: 0;
+    background:rgb(148, 69, 32);
+    bottom: 0.1%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+}
+.border-left{
+    margin-top: 15px;
+    width: 35%;
+    height: 89%;
+    background: rgb(29, 131, 51);
+    box-shadow: 2px -1px 10px 0px rgb(41 11 11);
+    border-top-right-radius: 45%;
+    border-top-left-radius: 50%;
+    border-right: 2px solid rgb(29, 131, 51);
+}
+.center {
+    width: 40%;
+    height: 100%;
+    background: rgb(29, 131, 51);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    box-shadow: 3px 0px 5px 0px rgb(41 11 11);
+    border: 1px solid rgb(29, 131, 51);
+    border-left: 1 px solid #38771f;
+    border-bottom: 2px solid black;
+}
+.border-right{
+    margin-top: 20px;
+    width: 35%;
+    height: 85%;
+    background: rgb(29, 131, 51);
+    box-shadow: 5px 1px 5px 0px rgb(41 11 11);
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-right:3px solid #38771f;
+    border-bottom: 2px solid black;
+}
+
+
+/*-----------------------nube derecha--------------------*/
+.layer-9 {
+    position: absolute;
+    z-index: 9;
+    height: 90px;
+    width: 100px;
+    bottom: 0;
+    right: 0;
+    border-radius: 4px;
+    border-bottom-right-radius: 22px;
+    display: flex;
+}
+.di {
+    margin-top: 5px;
+    width: 70%;
+    height: 85px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 45%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-right-radius: 15px;
+    border-bottom: 2px solid black;
+}
+.di1 {
+    margin-top: 30px;
+    width: 50px;
+    height: 60px;
+    background:  rgb(255, 255, 255);
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 15px;
+    border-bottom: 2px solid black;
+}
+/*----------------------nube izquierda------------------*/
+.layer-10 {
+    position: absolute;
+    z-index: 10;
+    height: 90px;
+    width: 50%;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+    border-bottom-left-radius: 20px;
+    display:flex;
+}
+.divi {
+    margin-top: 5px;
+    width: 50%;
+    height: 85px;
+    background: #38771f;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 35%;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 20px;
+}
+.divi1 {
+    margin-top: 29px;
+    bottom: 0;
+    width: 30px;
+    height: 60px;
+    background:  rgb(255, 255, 255);
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 100%;
+    border-top-left-radius: 10px;
+    border-bottom: 1px solid #38771f; 
+}
+.layer-1 input[type=checkbox] {
+}
+.layer-2{
+
+}
+.layer-2 input[type=checkbox] {
+
+}
+.layer-3 {
+
+}
+.layer-4{
+
+}
